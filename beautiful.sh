@@ -5,3 +5,4 @@ git_log()
 }
 
 git_log "$@"
+
