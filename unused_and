@@ -1,0 +1,19 @@
+#!/bin/sh
+usages()
+{
+    grep -Rl "$1" * | grep -v 'bin' | grep -v 'gen'
+    filename=$1
+    extension=${filename##*.}
+    filename=${filename%.*}
+    grep -Rl $filename * | grep -v 'bin' | grep -v 'gen'
+}
+for f in `find * -type f -name '*.png' -o -name '*.jpg' | grep -v 'android-support*'`; do
+  FILENAME=`basename $f`;
+  FILENAME=${FILENAME/.9/};
+  NUSAGES=`usages $FILENAME | wc -l | awk '{print $1}'`;
+  echo -e "\033[0;33m${FILENAME} - ${NUSAGES} 사용"
+  if [ $NUSAGES = 0 ]; then
+    echo -e "\033[0;31m$f 사용 안함";
+  fi;
+done;
+
