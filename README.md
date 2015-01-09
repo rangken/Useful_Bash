@@ -24,3 +24,9 @@ Dropbox Conflict file Remove
 ======
 
     \curl -sSL https://raw.githubusercontent.com/rangken/Useful_Bash/master/rm_dropbox_conflict | bash -s stable
+
+
+LaunchCtl All Remove
+======
+
+    \curl -sSL https://raw.githubusercontent.com/rangken/Useful_Bash/master/launchctl_all_remove | bash -s stable
