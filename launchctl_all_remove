@@ -1,0 +1,2 @@
+#!/bin/sh
+ls /Library/LaunchAgents/* ~/Library/LaunchAgents/* | xargs launchctl unload -w 
